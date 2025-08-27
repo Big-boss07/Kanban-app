@@ -2,49 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban Board</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="navbar">
+  <body class="board-body">
+    <header class="navbar">
       <h2>Kanban Board</h2>
-      <button onclick="logout()">Logout</button>
-    </div>
+      <button id="logoutBtn">Logout</button>
+    </header>
 
-    <div class="board">
-      <div
+    <main class="board">
+      <!-- To Do -->
+      <section
         class="column"
-        ondrop="drop(event, 'todo')"
         ondragover="allowDrop(event)"
+        ondrop="drop(event,'todo')"
       >
         <h3>To Do</h3>
-        <div id="todo"></div>
+        <div id="todo" class="task-list"></div>
         <input type="text" id="todoInput" placeholder="New task..." />
         <button onclick="addTask('todo')">Add</button>
-      </div>
+      </section>
 
-      <div
+      <!-- In Progress -->
+      <section
         class="column"
-        ondrop="drop(event, 'inprogress')"
         ondragover="allowDrop(event)"
+        ondrop="drop(event,'inprogress')"
       >
         <h3>In Progress</h3>
-        <div id="inprogress"></div>
+        <div id="inprogress" class="task-list"></div>
         <input type="text" id="inprogressInput" placeholder="New task..." />
         <button onclick="addTask('inprogress')">Add</button>
-      </div>
+      </section>
 
-      <div
+      <!-- Done -->
+      <section
         class="column"
-        ondrop="drop(event, 'done')"
         ondragover="allowDrop(event)"
+        ondrop="drop(event,'done')"
       >
         <h3>Done</h3>
-        <div id="done"></div>
+        <div id="done" class="task-list"></div>
         <input type="text" id="doneInput" placeholder="New task..." />
         <button onclick="addTask('done')">Add</button>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <script src="script.js"></script>
   </body>

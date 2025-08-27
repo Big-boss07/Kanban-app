@@ -2,41 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Login / Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login • Kanban</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="container">
-      <h2>Kanban App</h2>
-
-      <!-- Signup -->
-      <div id="signupForm">
-        <h3>Sign Up</h3>
-        <input type="text" id="signupName" placeholder="Name" required />
-        <input type="email" id="signupEmail" placeholder="Email" required />
-        <input
-          type="password"
-          id="signupPassword"
-          placeholder="Password"
-          required
-        />
-        <button onclick="signup()">Sign Up</button>
-      </div>
-
-      <!-- Login -->
-      <div id="loginForm">
-        <h3>Log In</h3>
-        <input type="email" id="loginEmail" placeholder="Email" required />
+  <body class="auth-body">
+    <div class="auth-container">
+      <h2>Welcome back</h2>
+      <form id="loginForm" class="auth-form">
+        <input type="text" id="loginUsername" placeholder="Username" required />
         <input
           type="password"
           id="loginPassword"
           placeholder="Password"
           required
         />
-        <button onclick="login()">Log In</button>
-      </div>
+        <button type="submit">Login</button>
+        <p>Don’t have an account? <a href="signup.html">Sign up</a></p>
+      </form>
     </div>
-
     <script src="auth.js"></script>
   </body>
 </html>

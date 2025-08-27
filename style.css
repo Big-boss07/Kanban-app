@@ -1,185 +1,193 @@
-/* General Body */
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #74ebd5, #acb6e5);
+/* ------- Animated gradient background shared ------- */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* Container (Login/Signup) */
-.container {
-  width: 350px;
-  margin: 80px auto;
-  padding: 25px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+/* ------- Auth pages ------- */
+.auth-body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(120deg, #ff6b6b, #4dabf7, #51cf66);
+  background-size: 300% 300%;
+  animation: gradientBG 8s ease infinite;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.auth-container {
+  width: 320px;
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   text-align: center;
 }
-
-.container h2 {
-  color: #333;
-  margin-bottom: 20px;
+.auth-form {
+  display: grid;
+  gap: 12px;
 }
-
-input {
-  width: 90%;
-  margin: 12px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-input:focus {
-  border-color: teal;
-  outline: none;
-}
-
-/* Buttons */
-button {
-  padding: 10px 16px;
-  margin: 8px;
+.auth-form input {
+  padding: 12px 14px;
+  border-radius: 12px;
   border: none;
-  border-radius: 8px;
-  background: teal;
-  color: white;
-  font-weight: bold;
+  outline: none;
+  font-size: 14px;
+}
+.auth-form button {
+  padding: 12px 14px;
+  border: none;
+  border-radius: 12px;
+  background: #ff6b6b;
+  color: #fff;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.auth-form button:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.95);
+}
+.auth-form a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
-button:hover {
-  background: darkcyan;
-  transform: scale(1.05);
-}
-
-/* Navbar */
-.navbar {
-  background: teal;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.navbar h2 {
+/* ------- Board page ------- */
+.board-body {
   margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(120deg, #74c0fc, #b197fc, #f783ac);
+  background-size: 300% 300%;
+  animation: gradientBG 8s ease infinite;
+  color: #fff;
 }
 
-/* Board */
-.board {
+.navbar {
   display: flex;
-  justify-content: space-around;
-  margin: 30px 10px;
-  flex-wrap: wrap;
-  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  color: #fff;
+}
+.navbar button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+.navbar button:hover {
+  filter: brightness(0.9);
 }
 
-/* Column */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  padding: 20px 22px 40px;
+  min-height: calc(100vh - 64px);
+}
+
 .column {
-  background: #fefefe;
-  padding: 15px;
-  width: 30%;
-  min-width: 250px;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  min-height: 420px;
 }
-
 .column h3 {
   text-align: center;
-  color: teal;
-  margin-bottom: 10px;
+  margin: 0 0 6px 0;
 }
 
-.column input {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.column button {
-  width: 100%;
-  margin: 0;
-}
-
-/* Task */
 .task {
-  background: #e0f7fa;
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 10px;
-  cursor: grab;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  cursor: grab;
+  background: rgba(255, 255, 255, 0.28);
+  color: #1b1b1b;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease;
 }
-
 .task:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Task buttons */
-.task-buttons button {
-  background: transparent;
+.task .btns {
+  display: flex;
+  gap: 6px;
+}
+.task .btns button {
   border: none;
-  font-size: 16px;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 12px;
   cursor: pointer;
-  margin-left: 5px;
-  transition: transform 0.2s;
+  color: #fff;
+}
+.task .btns .edit {
+  background: #ff922b;
+}
+.task .btns .edit:hover {
+  filter: brightness(0.95);
+}
+.task .btns .del {
+  background: #fa5252;
+}
+.task .btns .del:hover {
+  filter: brightness(0.95);
 }
 
-.task-buttons button:hover {
-  transform: scale(1.2);
+.task-list {
+  min-height: 40px;
 }
 
-/* Responsive */
-@media (max-width: 1000px) {
+.column input[type="text"] {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+}
+.column button {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: #51cf66;
+  color: #fff;
+  font-weight: 700;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.column button:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.95);
+}
+
+/* Small screens */
+@media (max-width: 900px) {
   .board {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
-
-  .column {
-    width: 80%;
-  }
-}
-
-/* Column colors */
-#todo {
-  background: #fff3e0; /* Light orange */
-  border-radius: 10px;
-  padding: 10px;
-  min-height: 100px;
-}
-
-#inprogress {
-  background: #e3f2fd; /* Light blue */
-  border-radius: 10px;
-  padding: 10px;
-  min-height: 100px;
-}
-
-#done {
-  background: #e8f5e9; /* Light green */
-  border-radius: 10px;
-  padding: 10px;
-  min-height: 100px;
-}
-
-/* Task cards with matching tint */
-#todo .task {
-  background: #ffe0b2; /* Slightly darker orange */
-}
-
-#inprogress .task {
-  background: #bbdefb; /* Slightly darker blue */
-}
-
-#done .task {
-  background: #c8e6c9; /* Slightly darker green */
 }
