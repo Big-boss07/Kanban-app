@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,56 +53,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Kanban Board</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="navbar">
-      <h2>Kanban Board</h2>
-      <button onclick="logout()">Logout</button>
-    </div>
-
-    <div class="board">
-      <div
-        class="column"
-        ondrop="drop(event, 'todo')"
-        ondragover="allowDrop(event)"
-      >
-        <h3>To Do</h3>
-        <div id="todo"></div>
-        <input type="text" id="todoInput" placeholder="New task..." />
-        <button onclick="addTask('todo')">Add</button>
-      </div>
-
-      <div
-        class="column"
-        ondrop="drop(event, 'inprogress')"
-        ondragover="allowDrop(event)"
-      >
-        <h3>In Progress</h3>
-        <div id="inprogress"></div>
-        <input type="text" id="inprogressInput" placeholder="New task..." />
-        <button onclick="addTask('inprogress')">Add</button>
-      </div>
-
-      <div
-        class="column"
-        ondrop="drop(event, 'done')"
-        ondragover="allowDrop(event)"
-      >
-        <h3>Done</h3>
-        <div id="done"></div>
-        <input type="text" id="doneInput" placeholder="New task..." />
-        <button onclick="addTask('done')">Add</button>
-      </div>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
-</html>
->>>>>>> 439d7c253f4ea0df0203a8a6f703b28cd4d51a96
