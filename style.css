@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ------- Animated gradient background shared ------- */
 @keyframes gradientBG {
   0% {
@@ -191,3 +192,190 @@
     grid-template-columns: 1fr;
   }
 }
+=======
+/* General Body */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+}
+
+/* Container (Login/Signup) */
+.container {
+  width: 350px;
+  margin: 80px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 90%;
+  margin: 12px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: teal;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  padding: 10px 16px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  background: teal;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: darkcyan;
+  transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar {
+  background: teal;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar h2 {
+  margin: 0;
+}
+
+/* Board */
+.board {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Column */
+.column {
+  background: #fefefe;
+  padding: 15px;
+  width: 30%;
+  min-width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+
+.column h3 {
+  text-align: center;
+  color: teal;
+  margin-bottom: 10px;
+}
+
+.column input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.column button {
+  width: 100%;
+  margin: 0;
+}
+
+/* Task */
+.task {
+  background: #e0f7fa;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Task buttons */
+.task-buttons button {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: transform 0.2s;
+}
+
+.task-buttons button:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .board {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    width: 80%;
+  }
+}
+
+/* Column colors */
+#todo {
+  background: #fff3e0; /* Light orange */
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 100px;
+}
+
+#inprogress {
+  background: #e3f2fd; /* Light blue */
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 100px;
+}
+
+#done {
+  background: #e8f5e9; /* Light green */
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 100px;
+}
+
+/* Task cards with matching tint */
+#todo .task {
+  background: #ffe0b2; /* Slightly darker orange */
+}
+
+#inprogress .task {
+  background: #bbdefb; /* Slightly darker blue */
+}
+
+#done .task {
+  background: #c8e6c9; /* Slightly darker green */
+}
+>>>>>>> 439d7c253f4ea0df0203a8a6f703b28cd4d51a96
